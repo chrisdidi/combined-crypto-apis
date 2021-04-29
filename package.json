@@ -1,18 +1,16 @@
 {
   "name": "combined-cryptos-api",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "description": "API Wrapper for Luno and Binance.",
   "main": "index.js",
-  "files": [
-    "lib/**/*"
-  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\" ",
     "lint": "tslint -p tsconfig.json",
     "prepare": "npm run build",
-    "prepublishOnly": "npm run lint"
+    "prepLib": "node ./config/prepareLib.js",
+    "deploy": "npm run prepLib && cd lib && npm publish"
   },
   "repository": {
     "type": "git",
